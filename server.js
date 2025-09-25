@@ -8,7 +8,7 @@ let app = express();
 
 app.use(cors());
 
-
+app.use(express.static(path.join(__dirname,"./client/build")));
 app.use('/profilePics', express.static(path.join(__dirname, 'profilePics')));
 
 
@@ -90,6 +90,12 @@ app.post("/signUp",upload.single("profilePic"),async(req,res)=>{
    }
    
 });
+
+app.get("*",(req,res)=>{
+    res.sendFile("./client/build/index.html");
+})
+
+
 
 let connectedToMDB = async ()=>{
     try {

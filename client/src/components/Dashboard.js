@@ -13,7 +13,7 @@ function Dashboard() {
     <div className="App">
       <h1>Dashboard</h1>
       <h1>{userDetails.firstName}{userDetails.lastName}</h1>
-      <h1>{`http://localhost:3333/${userDetails.profilePic}`}</h1>
+      <h1>{`/${userDetails.profilePic}`}</h1>
       <Link to='/'>login</Link>
     </div>
   )
